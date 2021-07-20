@@ -9,9 +9,9 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features= {"src/test/resources/appfeatures/"},
 		glue= {"stepdefinitions","apphooks"},
-		plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+		plugin = {"pretty","json:target/CucumberReport.json","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 		monochrome=true
 		)
-public class MyTestRunner {
+public class TestRunner {
 
 }
