@@ -5,13 +5,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>CucumberPOMSeries</groupId>
-	<artifactId>CucumberPOM</artifactId>
+	<groupId>JPMC</groupId>
+	<artifactId>JPMC</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>CucumberPOM</name>
+	<name>JPMC</name>
 	<!-- FIXME change it to the project's website -->
-	<url>http://www.example.com</url>
+	<url>http://www.JPMC.com</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -91,8 +91,6 @@
 
 	<build>
 		<plugins>
-
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -102,10 +100,6 @@
 					<release>11</release>
 				</configuration>
 			</plugin>
-			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-plugin</artifactId> 
-				<version>${maven.surefire.version}</version> <configuration> <includes> <include>**/ParallelRun.java</include> 
-				</includes> <parallel>methods</parallel> <threadCount>4</threadCount> <useUnlimitedThreads>false</useUnlimitedThreads> 
-				</configuration> </plugin> -->
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -117,35 +111,16 @@
 							<goal>integration-test</goal>
 						</goals>
 						<configuration>
-<!-- 							UNCOMMENT - To add any exclusions if required
-							<excludes>
-								<exclude>**/*IT*.java</exclude>
-							</excludes> -->
 							<includes>
 								UNCOMMENT BELOW LINE
-								- To execute feature files with a single runner
+								- To execute feature files with a single
+								runner
 								<include>**/*Runner.java</include>
-							<!-- 	UNCOMMENT BELOW LINE - To execute feature files with multiple
-								runners
-								<include>**/*Runner.java</include> -->
 							</includes>
-							<!-- UNCOMMENT BELOW 3 LINES - To execute using parallel or
-							combination
-							option
-							<parallel>methods</parallel>
-							<threadCount>4</threadCount>
-							<perCoreThreadCount>true</perCoreThreadCount>
-							UNCOMMENT BELOW 3 LINES - To execute using forking or combination
-							option
-							<forkCount>2</forkCount>
-							<reuseForks>true</reuseForks>
-							<reportsDirectory>${project.build.directory}/failsafe-reports_${surefire.forkNumber}</reportsDirectory> -->
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-
-
 		</plugins>
 	</build>
 </project>
