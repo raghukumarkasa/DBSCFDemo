@@ -20,6 +20,7 @@ public class ApplicationHooks {
 	private Properties prop;
 	private ConfigReader configReader;
 
+	//This is the first method that gets executed before every cucumber scenario
 	@Before(order = 0)
 	public void getProperty() {
 		configReader = new ConfigReader();
@@ -27,6 +28,7 @@ public class ApplicationHooks {
 		driverFactory = new DriverFactory();
 	}
 
+	//This is the second method that gets executed before every cucumber scenario
 	@Before(order = 1)
 	public void launchBrowser() {
 		String browserType = prop.getProperty("browser");
@@ -43,7 +45,7 @@ public class ApplicationHooks {
 		}
 	}
 
-	@After(order=0)
+	@After(order = 0)
 	public void quitBrowser() {
 		driver.quit();
 	}

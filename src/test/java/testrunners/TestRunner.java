@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features= {"src/test/resources/appfeatures/"},
+		features= {"src/test/resources/appfeatures/JPMLandingPage.feature"},
 		glue= {"stepdefinitions","apphooks"},
 		plugin = {"pretty","json:target/CucumberReport.json","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 		monochrome=true
