@@ -2,6 +2,8 @@ package apphooks;
 
 import java.util.Properties;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -20,6 +22,16 @@ public class ApplicationHooks {
 	private Properties prop;
 	private ConfigReader configReader;
 
+	@Before(value="@smoke", order = 3)
+	public void printSmokeAlert() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("alert('"+"Smoke test is being executed"+"')");
+		Thread.sleep(5000);
+		Alert a = driver.switchTo().alert();
+		a.accept();
+	}
+	
+	
 	//This is the first method that gets executed before every cucumber scenario
 	@Before(order = 0)
 	public void getProperty() {

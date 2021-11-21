@@ -15,9 +15,9 @@ public class SearchResultPage {
 	}
 	
 	//Page Actions
-	public JPMLandingPage clickOnFirstSearchResult() {
+	public DBSLandingPage clickOnFirstSearchResult() {
 		driver.findElement(firstSearchResult).click();		
-		return new JPMLandingPage(driver);
+		return new DBSLandingPage(driver);
 	}	
 	
 }
